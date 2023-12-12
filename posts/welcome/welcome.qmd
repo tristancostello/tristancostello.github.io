@@ -1,0 +1,13 @@
+---
+title: "Welcome To My Blog"
+author: "Tristan Costello"
+date: "2023-10-27"
+categories: [news]
+image: "new-basketball-pic.jpg"
+---
+
+Welcome to my blog! This is Tristan Costello.
+
+![](new-basketball-pic.jpg)
+
+Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.

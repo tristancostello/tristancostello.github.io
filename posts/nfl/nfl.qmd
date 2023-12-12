@@ -1,0 +1,17 @@
+---
+title: "spotify_all"
+author: "Byeong-Hak Choe"
+date: "2023-11-02"
+categories: [beer, code, data-analysis]
+image: "spotify.png"
+
+execute: 
+  warning: false
+  message: false
+  
+toc: true
+---
+
+```{r}
+spotify_all <- read.csv('https://bcdanl.github.io/data/spotify_all.csv')
+```

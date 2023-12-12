@@ -9,33 +9,28 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://linkedin.com/in/tristan-costello-80a580278
     - icon: instagram
       text: Instagram
-      href: https://instagram.com
+      href: https://instagram.com/tristancostello/
     - icon: github
       text: GitHub
-      href: https://github.com
+      href: https://github.com/tristancostello
     - icon: file-earmark-pdf
       text: Resumé
-      href: https://GITHUB_USERNAME.github.io/resume-example.pdf
+      href: https://tristancostello.github.io/costello-resume.pdf
+
     - icon: mailbox
       text: Email
-      href: mailto:YOUR_EMAIL@geneseo.edu
-
+      href: mailto:tc32@geneseo.edu
 ---
-
 
 Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana.
 
 ## Education
 
-State University of New York at Geneseo | Geneseo, NY <br>
-B.S. in Data Analytics | Aug 2022 - May 2026 <br>
-Minor in Business Administration 
+State University of New York at Geneseo \| Geneseo, NY <br> B.S. in Data Analytics \| Aug 2022 - May 2026 <br> Minor in Business Administration
 
 ## Experience
 
-Starbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024
-
-
+Starbucks Analytics \| Data Analyst Intern \| May 2024 - Aug 2024
