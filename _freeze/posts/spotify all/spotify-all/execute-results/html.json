@@ -1,0 +1,14 @@
+{
+  "hash": "f9710dbed56399e24a02d9f483e5fbe6",
+  "result": {
+    "markdown": "---\ntitle: \"spotify_all\"\nauthor: \"Tristan Costello\"\ndate: \"2023-10-30\"\ncategories: [spotify]\nimage: \"spotify.png\"\nexecute: \n  \n  warning: false\n  message: false\ntoc: true\n---\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nspotify_all <- read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

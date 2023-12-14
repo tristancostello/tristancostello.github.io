@@ -1,16 +1,19 @@
 ---
-title: "Starwars"
+title: "Restaurant Insoection"
 author: "Your Name"
 date: "2023-10-30"
 categories: [starwars, code, analysis]
-image: "image.png"
-
+image: "nba.png"
 execute: 
+  
   warning: false
   message: false
-  
 toc: true
+editor: 
+  markdown: 
+    wrap: 72
 ---
+
 ```{r}
 #| include: false
 
@@ -39,49 +42,37 @@ Let's analyze the `starwars` data:
 starwars <- read_csv("https://bcdanl.github.io/data/starwars.csv")
 ```
 
-
 ```{r}
 #| results: asis
 rmarkdown::paged_table(starwars) 
 ```
 
-
-
 ## Variable Description for `starwars` data.frame
 
 The following describes the variables in the `starwars` data.frame.
 
+-   `films` List of films the character appeared in
 
-- `films`
-List of films the character appeared in
+-   `name` Name of the character
 
-- `name`
-Name of the character
+-   `species` Name of species
 
-- `species`
-Name of species
+-   `height` Height (cm)
 
-- `height`
-Height (cm)
+-   `mass` Weight (kg)
 
-- `mass`
-Weight (kg)
+-   `hair_color`, `skin_color`, `eye_color` Hair, skin, and eye colors
 
-- `hair_color`, `skin_color`, `eye_color`
-Hair, skin, and eye colors
+-   `birth_year` Year born (BBY = Before Battle of Yavin)
 
-- `birth_year`
-Year born (BBY = Before Battle of Yavin)
+-   `sex` The biological sex of the character, namely male, female,
+    hermaphroditic, or none (as in the case for Droids).
 
-- `sex`
-The biological sex of the character, namely male, female, hermaphroditic, or none (as in the case for Droids).
+-   `gender` The gender role or gender identity of the character as
+    determined by their personality or the way they were programmed (as
+    in the case for Droids).
 
-- `gender`
-The gender role or gender identity of the character as determined by their personality or the way they were programmed (as in the case for Droids).
-
-- `homeworld`
-Name of homeworld
-
+-   `homeworld` Name of homeworld
 
 ## Human vs. Droid
 
@@ -94,5 +85,3 @@ ggplot(data =
                show.legend = FALSE)
 
 ```
-
-

@@ -5,13 +5,42 @@ date: "2023-11-02"
 categories: [beer, code, data-analysis]
 image: "spotify.png"
 
+
 execute: 
   warning: false
   message: false
   
 toc: true
 ---
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+theme_set(theme_ipsum()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.33),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.33),
+                               margin = margin(0,10,0,0))
+                )
+          )
+```
+
 
 ```{r}
-spotify_all <- read.csv('https://bcdanl.github.io/data/spotify_all.csv')
+NFL2022_stuffs <- read_csv('https://bcdanl.github.io/data/NFL2022_stuffs.csv')
 ```
+
+```{r}
+
+```
+
+
+

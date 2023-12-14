@@ -1,0 +1,86 @@
+---
+title: "{hoopR: The SportsDataverse's R Package for Men's Basketball Data.}"
+author: "Gilani, Saiem"
+date: "2021"
+categories: [nba]
+image: "nba.png"
+execute: 
+  
+  warning: false
+  message: false
+toc: true
+---
+
+
+![](nba.png)
+
+```{r}
+#| include: false
+
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+theme_set(theme_ipsum()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x  = element_text(angle = 0,
+                                            size = rel(1.5),
+                                            margin = margin(10,0,0,0)),
+                axis.title.y  = element_text(angle = 0,
+                                            size = rel(1.5),
+                                            margin = margin(0,10,0,0))
+                )
+          )
+```
+
+```{r}
+#| eval: false
+options(repos = c(CRAN = "https://cran.r-project.org/"))
+```
+
+
+```{r}
+#| eval: false
+install.packages("hoopR")
+```
+
+```{r}
+#| eval: false
+
+if (!requireNamespace('pacman', quietly = TRUE)){
+  install.packages('pacman')
+}
+pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
+```
+
+```{r}
+#| eval: false
+rmarkdown::paged_table() 
+```
+
+
+```{r}
+#| eval: false
+tictoc::tic()
+progressr::with_progress({
+  nba_pbp <- hoopR::load_nba_pbp()
+})
+tictoc::toc()
+
+```
+
+```{r}
+#| eval: false
+tictoc::tic()
+progressr::with_progress({
+  mbb_pbp <-  hoopR::load_mbb_pbp()
+})
+tictoc::toc()
+```
+
+```{r}
+
+```

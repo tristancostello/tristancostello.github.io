@@ -2,11 +2,10 @@
 title: DANL Project
 subtitle: "Data-Driven Mastery: Unlocking Business Potential"
 author: 
-  - Name 1
-  - Name 2
-  - Name 3
-  - Name 4
-  - Name 5
+  - Name Tristan Costello
+  - Name Quinn Campbell
+  - Name Joshua Lefkowicz
+  - Name Andrew Thompson
 
 toc: true
 toc-title: "Table of Contents"

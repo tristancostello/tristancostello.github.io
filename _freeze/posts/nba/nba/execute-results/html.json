@@ -1,0 +1,14 @@
+{
+  "hash": "d1ef965fc969453aa26a408edcab7203",
+  "result": {
+    "markdown": "---\ntitle: \"{hoopR: The SportsDataverse's R Package for Men's Basketball Data.}\"\nauthor: \"Gilani, Saiem\"\ndate: \"2021\"\ncategories: [nba]\nimage: \"nba.png\"\nexecute: \n  \n  warning: false\n  message: false\ntoc: true\n---\n\n\n\n![](nba.png)\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\noptions(repos = c(CRAN = \"https://cran.r-project.org/\"))\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"hoopR\")\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nif (!requireNamespace('pacman', quietly = TRUE)){\n  install.packages('pacman')\n}\npacman::p_load_current_gh(\"sportsdataverse/hoopR\", dependencies = TRUE, update = TRUE)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nrmarkdown::paged_table() \n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ntictoc::tic()\nprogressr::with_progress({\n  nba_pbp <- hoopR::load_nba_pbp()\n})\ntictoc::toc()\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ntictoc::tic()\nprogressr::with_progress({\n  mbb_pbp <-  hoopR::load_mbb_pbp()\n})\ntictoc::toc()\n```\n:::\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

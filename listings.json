@@ -2,12 +2,12 @@
   {
     "listing": "/blog-listing.html",
     "items": [
-      "/posts/nba/UntitledQMD.html",
-      "/posts/spotify all/spotify-all.html",
       "/posts/nfl/nfl.html",
+      "/posts/spotify all/spotify-all.html",
       "/posts/restaurants/restaurants.html",
       "/posts/beer/beer.html",
-      "/posts/welcome/welcome.html"
+      "/posts/welcome/welcome.html",
+      "/posts/nba/nba.html"
     ]
   }
 ]
