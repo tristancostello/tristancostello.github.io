@@ -1,5 +1,5 @@
 ---
-title: "Restaurant Insoection"
+title: "Restaurant Inspection"
 author: "Your Name"
 date: "2023-10-30"
 categories: [starwars, code, analysis]

@@ -9,21 +9,21 @@
   {
     "objectID": "posts/restaurants/restaurants.html",
     "href": "posts/restaurants/restaurants.html",
-    "title": "Starwars",
+    "title": "Restaurant Inspection",
     "section": "",
     "text": "Let’s analyze the starwars data:\nstarwars &lt;- read_csv(\"https://bcdanl.github.io/data/starwars.csv\")"
   },
   {
     "objectID": "posts/restaurants/restaurants.html#variable-description-for-starwars-data.frame",
     "href": "posts/restaurants/restaurants.html#variable-description-for-starwars-data.frame",
-    "title": "Starwars",
+    "title": "Restaurant Inspection",
     "section": "Variable Description for starwars data.frame",
     "text": "Variable Description for starwars data.frame\nThe following describes the variables in the starwars data.frame.\n\nfilms List of films the character appeared in\nname Name of the character\nspecies Name of species\nheight Height (cm)\nmass Weight (kg)\nhair_color, skin_color, eye_color Hair, skin, and eye colors\nbirth_year Year born (BBY = Before Battle of Yavin)\nsex The biological sex of the character, namely male, female, hermaphroditic, or none (as in the case for Droids).\ngender The gender role or gender identity of the character as determined by their personality or the way they were programmed (as in the case for Droids).\nhomeworld Name of homeworld"
   },
   {
     "objectID": "posts/restaurants/restaurants.html#human-vs.-droid",
     "href": "posts/restaurants/restaurants.html#human-vs.-droid",
-    "title": "Starwars",
+    "title": "Restaurant Inspection",
     "section": "Human vs. Droid",
     "text": "Human vs. Droid\n\nggplot(data = \n         starwars %&gt;% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
   },
@@ -60,28 +60,28 @@
     "href": "index.html",
     "title": "Tristan Costello",
     "section": "",
-    "text": "Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana."
+    "text": "Tristan Costello majors in Business Administration at SUNY Geneseo. Hobbies include basketball, golf, food"
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
     "title": "Tristan Costello",
     "section": "Education",
-    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2026  Minor in Business Administration"
+    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  | Aug 2021 - May 2025  Major in Business Administration"
   },
   {
     "objectID": "index.html#experience",
     "href": "index.html#experience",
     "title": "Tristan Costello",
     "section": "Experience",
-    "text": "Experience\nStarbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024"
+    "text": "Experience\nNBA NY Analytics | Data Analyst Intern | Aug 2023 - Dec 2023"
   },
   {
     "objectID": "blog-listing.html",
     "href": "blog-listing.html",
     "title": "Insightful Analytics",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nspotify_all\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nTristan Costello\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nRestaurant Insoection\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nTristan Costello\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\n{hoopR: The SportsDataverse’s R Package for Men’s Basketball Data.}\n\n\n\n\n\n\n\n\n\nDec 31, 2020\n\n\nGilani, Saiem\n\n\n2 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nspotify_all\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nTristan Costello\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nRestaurant Inspection\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nTristan Costello\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\n{hoopR: The SportsDataverse’s R Package for Men’s Basketball Data.}\n\n\n\n\n\n\n\n\n\nDec 31, 2020\n\n\nGilani, Saiem\n\n\n2 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "project.html",

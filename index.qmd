@@ -1,10 +1,10 @@
 ---
 title: "Tristan Costello" 
 about:
-  template: trestles  # jolla  trestles  solana  marquee  broadside
-  image: img/profile.png
+  template: solana  # jolla  trestles  solana  marquee  broadside
+  image: img/new-basketball-pic.jpg
   image-width: 15em
-  image-shape: round # rectangle  round  rounded
+  image-shape: rectangle # rectangle  round  rounded
   
   links:
     - icon: linkedin
@@ -25,12 +25,12 @@ about:
       href: mailto:tc32@geneseo.edu
 ---
 
-Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana.
+Tristan Costello majors in Business Administration at SUNY Geneseo. Hobbies include basketball, golf, food
 
 ## Education
 
-State University of New York at Geneseo \| Geneseo, NY <br> B.S. in Data Analytics \| Aug 2022 - May 2026 <br> Minor in Business Administration
+State University of New York at Geneseo \| Geneseo, NY <br> \| Aug 2021 - May 2025 <br> Major in Business Administration
 
 ## Experience
 
-Starbucks Analytics \| Data Analyst Intern \| May 2024 - Aug 2024
+NBA NY Analytics \| Data Analyst Intern \| Aug 2023 - Dec 2023
