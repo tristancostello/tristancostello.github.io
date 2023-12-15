@@ -14,6 +14,12 @@ toc: true
 
 ![](nba.png)
 
+
+Name:Tristan Costello
+Name:Andrew Thompson
+Name:Hannah Chisholm
+Name:Quinn Campbell
+Name:Joshua Lefkowicz
 ```{r}
 #| include: false
 
@@ -36,30 +42,7 @@ theme_set(theme_ipsum()+
           )
 ```
 
-```{r}
-#| eval: false
-options(repos = c(CRAN = "https://cran.r-project.org/"))
-```
 
-
-```{r}
-#| eval: false
-install.packages("hoopR")
-```
-
-```{r}
-#| eval: false
-
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
-}
-pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
-```
-
-```{r}
-#| eval: false
-rmarkdown::paged_table() 
-```
 
 
 ```{r}
@@ -82,5 +65,22 @@ tictoc::toc()
 ```
 
 ```{r}
+library(tidyverse)
+```
+
+
+```{r}
+#| eval: false
+rmarkdown::paged_table(hoopR) 
+```
+```{r}
+nba_pbp_ny <- nba_pbp %>% 
+  filter(str_detect(home_team_name, "New York") | 
+           str_detect(away_team_name, "New York") )
+```
+
+```{r}
+
 
 ```
+
