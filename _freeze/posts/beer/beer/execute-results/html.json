@@ -1,7 +1,7 @@
 {
-  "hash": "02ab297124a3553831e0394221c537ad",
+  "hash": "dcb05a1ab6fd08c91de0209d4578a6fc",
   "result": {
-    "markdown": "---\ntitle: \"Post With Code\"\nauthor: \"YOUR NAME\"\ndate: \"2023-10-30\"\ncategories: [news, code, analysis]\nimage: \"image.jpg\"\n---\n\n\nThis is a post with executable code.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "markdown": "---\ntitle: \"Beer\"\nauthor: \"Tristan Costello\"\ndate: \"2023-10-30\"\ncategories: [beer]\nimage: \"beer.png\"\n---\n\n\nThis is a post with executable code.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

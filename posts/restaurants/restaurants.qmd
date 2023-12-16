@@ -1,9 +1,9 @@
 ---
 title: "Restaurant Inspection"
-author: "Your Name"
+author: "Tristan Costello"
 date: "2023-10-30"
-categories: [starwars, code, analysis]
-image: "nba.png"
+categories: [restaurants]
+image: "restaurant.png"
 execute: 
   
   warning: false

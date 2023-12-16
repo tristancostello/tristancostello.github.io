@@ -1,6 +1,6 @@
 ---
 title: DANL Project
-subtitle: "Data-Driven Mastery: Unlocking Business Potential"
+subtitle: "hoopR: The SportsDataverse's R Package for Men's Basketball Data."
 author: 
   - Name Tristan Costello
   - Name Quinn Campbell
@@ -11,16 +11,17 @@ toc: true
 toc-title: "Table of Contents"
 toc-depth: 2
 number-sections: true
-
 fig-width: 9
-
 execute:
   code-tools: true
   message: false
   warning: false
-
 from: markdown+emoji
+editor: 
+  markdown: 
+    wrap: 72
 ---
+
 ```{r setup}
 #| include: false
 library(tidyverse)
@@ -42,50 +43,155 @@ theme_set(theme_ipsum()+
           )
 ```
 
-
-
 # Introduction
- 
+
 About this project :clap:
 
-```{r}
-1 + 1
-```
-
+This project seeks to examine and highlight the disparities in team
+performance between their home court and away games. Through a detailed
+analysis, we aim to uncover insights into how external factors, such as
+the playing venue, influence sporting outcomes. By exploring these
+nuances, we intend to provide valuable perspectives on the intricate
+dynamics that distinguish home and away performances in competitive
+sports.
 
 # Data
 
-The data.frame `mpg` contains a subset of the fuel economy data that the EPA makes available on [https://fueleconomy.gov/](https://fueleconomy.gov/). It contains only models which had a new release every year between 1999 and 2008 - this was used as a proxy for the popularity of the car. :oncoming_automobile:
-
+The dataset nba_pbp_ny comprises a subset of the NBA play-by-play data,
+specifically selected based on a criteria related to this years games.
+In the context of the project, this subset includes only those teams or
+players that consistently participated and demonstrated a sustained
+level of activity in the NBA across 2023-2024 season thus far. This
+criterion was utilized as a proxy for gauging the enduring relevance or
+popularity of specific teams or players during that period. The aim is
+to investigate and compare the performance metrics of these consistently
+active entities, both at their home court and away, providing insights
+into how their sustained presence correlates with their gameplay
+dynamics over the specified timeframe. :basketball:
 
 ## Summary Statistics
 
 ```{r}
-mpg <- ggplot2::mpg
+nba_pbp_ny <- read_csv("https://tristancostello.github.io/nba_hoopr_ny.csv")
 ```
 
 ```{r}
-#| results: asis
-#| echo: false
-rmarkdown::paged_table(mpg) 
+#| eval: false
+rmarkdown::paged_table(nba_pbp_ny) 
 ```
 
-
 ```{r}
-skim(mpg) %>% 
+skim(nba_pbp_ny) %>% 
   select(-n_missing)
 ```
 
+## Home Score and Team
 
-## MPG and a Type of Cars
-The following boxplot shows how the distribution of highway MPG (`hwy`) varies by a type of cars (`class`) :blue_car: :truck: :minibus:.
-
+The following boxplot shows the home score (`home_score`) of the home
+team (`home_team_name`) :basketball
 
 ```{r}
-ggplot(data = mpg) +
-  geom_boxplot(aes(x = class, y = hwy, fill = class),
-               show.legend = F) +
-  labs(x = "Class", y = "Highway\nMPG") 
+ggplot(data = 
+         nba_pbp_ny %>% 
+         filter(home_team_name %in% c("Utah", "New York","Boston"))) +
+  geom_boxplot(aes(x = home_team_name, y = home_score, 
+                   fill = home_team_name),
+               show.legend = FALSE)
 ```
 
+## Away Score and Team
 
+The following boxplot shows the away score (`away_score`) of the away
+team (`away_team_name`) :basketball
+
+```{r}
+ggplot(data = 
+         nba_pbp_ny %>% 
+         filter(away_team_name %in% c("Utah", "New York","Boston"))) +
+  geom_boxplot(aes(x = away_team_name, y = away_score, 
+                   fill = away_team_name),
+               show.legend = FALSE)
+```
+
+## Home Score and Team
+
+The following line graph shows the home score (`home_score`) of the home
+team (`home_team_name`) :basketball
+
+```{r}
+nba_pbp_ny %>%
+  filter(home_team_name %in% c("Utah", "New York", "Boston")) %>%
+  ggplot(aes(x = as.factor(home_team_name), y = home_score, group = home_team_name, color = home_team_name)) +
+  geom_line() +
+  labs(title = "Home Team Scores Over Time",
+       x = "Home Team Name",
+       y = "Home Team Score") +
+  theme_minimal()
+```
+
+## Away Score and Team
+
+The following line graph shows the away score (`away_score`) of the away
+team (`away_team_name`) :basketball
+
+```{r}
+nba_pbp_ny %>%
+  filter(away_team_name %in% c("Utah","New York", "Boston")) %>%
+  ggplot(aes(x = as.factor(away_team_name), y = away_score, group = away_team_name, color = away_team_name)) +
+  geom_line() +
+  labs(title = "Away Team Scores Over Time",
+       x = "Away Team Name",
+       y = "Away Team Score") +
+  theme_minimal()
+```
+
+## Why do teams tend to do better at home?
+
+Home court advantage serves as a decisive factor across all professional
+sports, providing teams with a significant edge through a positive
+atmosphere and heightened motivation fueled by fan support. The familiar
+surroundings and enthusiastic cheers contribute to a sense of
+camaraderie, inspiring players to deliver standout performances on their
+home court. This intricate interplay between psychological factors and
+tangible gameplay dynamics underscores the enduring impact of home court
+advantage in shaping the outcomes of competitive matches.
+
+## Why do teams score more against other teams?
+
+Teams may score more against certain opponents due to a variety of
+factors. These could include differences in team strategies, strengths
+and weaknesses, player matchups, and tactical variations that exploit
+vulnerabilities in the opposing team's defense. Additionally, factors
+such as team morale, motivation, and the specific dynamics of each match
+can influence scoring outcomes, creating variations in performance
+against different opponents. Understanding the specific elements at
+play, both strategically and psychologically, contributes to unraveling
+the complexities behind why teams may exhibit higher-scoring
+performances against certain adversaries.
+
+## Are there specific players associated with higher scoring games?
+
+Yes, specific basketball players are often associated with
+higher-scoring games, and their individual performances can
+significantly impact the overall scoring of their teams. Star players
+known for their scoring abilities, such as prolific scorers or
+sharpshooters, tend to contribute more points to their team's total.
+Factors such as a player's skill set, shooting accuracy, scoring
+versatility, and ability to create scoring opportunities can all
+influence their association with higher-scoring games. Analyzing
+individual player performances provides insights into the key
+contributors to a team's overall scoring and helps identify players who
+consistently excel in putting points on
+
+## Can we identify any variables that correlate strongly with team performance?
+
+Exploring the correlation between various variables and team performance
+is crucial for gaining insights into the factors that contribute to a
+team's success. Key variables to consider include player statistics
+(e.g., points per game, assists, rebounds), team dynamics, coaching
+strategies, and game-related metrics (e.g., field goal percentage,
+three-point percentage, turnovers). By conducting a comprehensive
+analysis, we can identify which of these factors exhibit a strong
+correlation with team performance, providing valuable information for
+coaches, analysts, and teams seeking to optimize their strategies and
+enhance overall on-court success.

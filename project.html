@@ -10,6 +10,7 @@
 <meta name="author" content="Name Quinn Campbell">
 <meta name="author" content="Name Joshua Lefkowicz">
 <meta name="author" content="Name Andrew Thompson">
+<meta name="author" content="Name Hannah Chisholm">
 
 <title>Tristan Costello - DANL Project</title>
 <style>
@@ -98,9 +99,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -151,7 +149,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2</span> Data</a>
   <ul class="collapse">
   <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">2.1</span> Summary Statistics</a></li>
-  <li><a href="#mpg-and-a-type-of-cars" id="toc-mpg-and-a-type-of-cars" class="nav-link" data-scroll-target="#mpg-and-a-type-of-cars"><span class="header-section-number">2.2</span> MPG and a Type of Cars</a></li>
+  <li><a href="#home-score-and-team" id="toc-home-score-and-team" class="nav-link" data-scroll-target="#home-score-and-team"><span class="header-section-number">2.2</span> Home Score and Team</a></li>
+  <li><a href="#away-score-and-team" id="toc-away-score-and-team" class="nav-link" data-scroll-target="#away-score-and-team"><span class="header-section-number">2.3</span> Away Score and Team</a></li>
+  <li><a href="#home-score-and-team-1" id="toc-home-score-and-team-1" class="nav-link" data-scroll-target="#home-score-and-team-1"><span class="header-section-number">2.4</span> Home Score and Team</a></li>
+  <li><a href="#away-score-and-team-1" id="toc-away-score-and-team-1" class="nav-link" data-scroll-target="#away-score-and-team-1"><span class="header-section-number">2.5</span> Away Score and Team</a></li>
+  <li><a href="#why-do-teams-tend-to-do-better-at-home" id="toc-why-do-teams-tend-to-do-better-at-home" class="nav-link" data-scroll-target="#why-do-teams-tend-to-do-better-at-home"><span class="header-section-number">2.6</span> Why do teams tend to do better at home?</a></li>
+  <li><a href="#why-do-teams-score-more-against-other-teams" id="toc-why-do-teams-score-more-against-other-teams" class="nav-link" data-scroll-target="#why-do-teams-score-more-against-other-teams"><span class="header-section-number">2.7</span> Why do teams score more against other teams?</a></li>
+  <li><a href="#are-there-specific-players-associated-with-higher-scoring-games" id="toc-are-there-specific-players-associated-with-higher-scoring-games" class="nav-link" data-scroll-target="#are-there-specific-players-associated-with-higher-scoring-games"><span class="header-section-number">2.8</span> Are there specific players associated with higher scoring games?</a></li>
+  <li><a href="#can-we-identify-any-variables-that-correlate-strongly-with-team-performance" id="toc-can-we-identify-any-variables-that-correlate-strongly-with-team-performance" class="nav-link" data-scroll-target="#can-we-identify-any-variables-that-correlate-strongly-with-team-performance"><span class="header-section-number">2.9</span> Can we identify any variables that correlate strongly with team performance?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -162,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">DANL Project</h1>
-<p class="subtitle lead">Data-Driven Mastery: Unlocking Business Potential</p>
+<p class="subtitle lead">hoopR: The SportsDataverse’s R Package for Men’s Basketball Data.</p>
 </div>
 
 
@@ -176,6 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
              <p>Name Quinn Campbell </p>
              <p>Name Joshua Lefkowicz </p>
              <p>Name Andrew Thompson </p>
+             <p>Name Hannah Chisholm </p>
           </div>
   </div>
     
@@ -189,47 +195,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p>About this project <span class="emoji" data-emoji="clap">👏</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<p>This project seeks to examine and highlight the disparities in team performance between their home court and away games. Through a detailed analysis, we aim to uncover insights into how external factors, such as the playing venue, influence sporting outcomes. By exploring these nuances, we intend to provide valuable perspectives on the intricate dynamics that distinguish home and away performances in competitive sports.</p>
 </section>
 <section id="data" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Data</h1>
-<p>The data.frame <code>mpg</code> contains a subset of the fuel economy data that the EPA makes available on <a href="https://fueleconomy.gov/">https://fueleconomy.gov/</a>. It contains only models which had a new release every year between 1999 and 2008 - this was used as a proxy for the popularity of the car. <span class="emoji" data-emoji="oncoming_automobile">🚘</span></p>
+<p>The dataset nba_pbp_ny comprises a subset of the NBA play-by-play data, specifically selected based on a criteria related to this years games. In the context of the project, this subset includes only those teams or players that consistently participated and demonstrated a sustained level of activity in the NBA across 2023-2024 season thus far. This criterion was utilized as a proxy for gauging the enduring relevance or popularity of specific teams or players during that period. The aim is to investigate and compare the performance metrics of these consistently active entities, both at their home court and away, providing insights into how their sustained presence correlates with their gameplay dynamics over the specified timeframe. <span class="emoji" data-emoji="basketball">🏀</span></p>
 <section id="summary-statistics" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">2.1</span> Summary Statistics</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["manufacturer"],"name":[1],"type":["chr"],"align":["left"]},{"label":["model"],"name":[2],"type":["chr"],"align":["left"]},{"label":["displ"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["year"],"name":[4],"type":["int"],"align":["right"]},{"label":["cyl"],"name":[5],"type":["int"],"align":["right"]},{"label":["trans"],"name":[6],"type":["chr"],"align":["left"]},{"label":["drv"],"name":[7],"type":["chr"],"align":["left"]},{"label":["cty"],"name":[8],"type":["int"],"align":["right"]},{"label":["hwy"],"name":[9],"type":["int"],"align":["right"]},{"label":["fl"],"name":[10],"type":["chr"],"align":["left"]},{"label":["class"],"name":[11],"type":["chr"],"align":["left"]}],"data":[{"1":"audi","2":"a4","3":"1.8","4":"1999","5":"4","6":"auto(l5)","7":"f","8":"18","9":"29","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"1.8","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"20","9":"31","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"2.0","4":"2008","5":"4","6":"auto(av)","7":"f","8":"21","9":"30","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"2.8","4":"1999","5":"6","6":"auto(l5)","7":"f","8":"16","9":"26","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"2.8","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"18","9":"26","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"3.1","4":"2008","5":"6","6":"auto(av)","7":"f","8":"18","9":"27","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"1.8","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"18","9":"26","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"1.8","4":"1999","5":"4","6":"auto(l5)","7":"4","8":"16","9":"25","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"4","8":"20","9":"28","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"2.0","4":"2008","5":"4","6":"auto(s6)","7":"4","8":"19","9":"27","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"2.8","4":"1999","5":"6","6":"auto(l5)","7":"4","8":"15","9":"25","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"2.8","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"17","9":"25","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"3.1","4":"2008","5":"6","6":"auto(s6)","7":"4","8":"17","9":"25","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"3.1","4":"2008","5":"6","6":"manual(m6)","7":"4","8":"15","9":"25","10":"p","11":"compact"},{"1":"audi","2":"a6 quattro","3":"2.8","4":"1999","5":"6","6":"auto(l5)","7":"4","8":"15","9":"24","10":"p","11":"midsize"},{"1":"audi","2":"a6 quattro","3":"3.1","4":"2008","5":"6","6":"auto(s6)","7":"4","8":"17","9":"25","10":"p","11":"midsize"},{"1":"audi","2":"a6 quattro","3":"4.2","4":"2008","5":"8","6":"auto(s6)","7":"4","8":"16","9":"23","10":"p","11":"midsize"},{"1":"chevrolet","2":"c1500 suburban 2wd","3":"5.3","4":"2008","5":"8","6":"auto(l4)","7":"r","8":"14","9":"20","10":"r","11":"suv"},{"1":"chevrolet","2":"c1500 suburban 2wd","3":"5.3","4":"2008","5":"8","6":"auto(l4)","7":"r","8":"11","9":"15","10":"e","11":"suv"},{"1":"chevrolet","2":"c1500 suburban 2wd","3":"5.3","4":"2008","5":"8","6":"auto(l4)","7":"r","8":"14","9":"20","10":"r","11":"suv"},{"1":"chevrolet","2":"c1500 suburban 2wd","3":"5.7","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"13","9":"17","10":"r","11":"suv"},{"1":"chevrolet","2":"c1500 suburban 2wd","3":"6.0","4":"2008","5":"8","6":"auto(l4)","7":"r","8":"12","9":"17","10":"r","11":"suv"},{"1":"chevrolet","2":"corvette","3":"5.7","4":"1999","5":"8","6":"manual(m6)","7":"r","8":"16","9":"26","10":"p","11":"2seater"},{"1":"chevrolet","2":"corvette","3":"5.7","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"15","9":"23","10":"p","11":"2seater"},{"1":"chevrolet","2":"corvette","3":"6.2","4":"2008","5":"8","6":"manual(m6)","7":"r","8":"16","9":"26","10":"p","11":"2seater"},{"1":"chevrolet","2":"corvette","3":"6.2","4":"2008","5":"8","6":"auto(s6)","7":"r","8":"15","9":"25","10":"p","11":"2seater"},{"1":"chevrolet","2":"corvette","3":"7.0","4":"2008","5":"8","6":"manual(m6)","7":"r","8":"15","9":"24","10":"p","11":"2seater"},{"1":"chevrolet","2":"k1500 tahoe 4wd","3":"5.3","4":"2008","5":"8","6":"auto(l4)","7":"4","8":"14","9":"19","10":"r","11":"suv"},{"1":"chevrolet","2":"k1500 tahoe 4wd","3":"5.3","4":"2008","5":"8","6":"auto(l4)","7":"4","8":"11","9":"14","10":"e","11":"suv"},{"1":"chevrolet","2":"k1500 tahoe 4wd","3":"5.7","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"suv"},{"1":"chevrolet","2":"k1500 tahoe 4wd","3":"6.5","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"14","9":"17","10":"d","11":"suv"},{"1":"chevrolet","2":"malibu","3":"2.4","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"27","10":"r","11":"midsize"},{"1":"chevrolet","2":"malibu","3":"2.4","4":"2008","5":"4","6":"auto(l4)","7":"f","8":"22","9":"30","10":"r","11":"midsize"},{"1":"chevrolet","2":"malibu","3":"3.1","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"chevrolet","2":"malibu","3":"3.5","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"18","9":"29","10":"r","11":"midsize"},{"1":"chevrolet","2":"malibu","3":"3.6","4":"2008","5":"6","6":"auto(s6)","7":"f","8":"17","9":"26","10":"r","11":"midsize"},{"1":"dodge","2":"caravan 2wd","3":"2.4","4":"1999","5":"4","6":"auto(l3)","7":"f","8":"18","9":"24","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.0","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"17","9":"24","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.3","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"16","9":"22","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.3","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"16","9":"22","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.3","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"17","9":"24","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.3","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"17","9":"24","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.3","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"11","9":"17","10":"e","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.8","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"15","9":"22","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.8","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"15","9":"21","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.8","4":"2008","5":"6","6":"auto(l6)","7":"f","8":"16","9":"23","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"4.0","4":"2008","5":"6","6":"auto(l6)","7":"f","8":"16","9":"23","10":"r","11":"minivan"},{"1":"dodge","2":"dakota pickup 4wd","3":"3.7","4":"2008","5":"6","6":"manual(m6)","7":"4","8":"15","9":"19","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"3.7","4":"2008","5":"6","6":"auto(l4)","7":"4","8":"14","9":"18","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"3.9","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"3.9","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"14","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"14","9":"19","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"14","9":"19","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"9","9":"12","10":"e","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"5.2","4":"1999","5":"8","6":"manual(m5)","7":"4","8":"11","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"5.2","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"pickup"},{"1":"dodge","2":"durango 4wd","3":"3.9","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"17","10":"r","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"9","9":"12","10":"e","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"17","10":"r","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"5.2","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"16","10":"r","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"5.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"18","10":"r","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"5.9","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"suv"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"manual(m6)","7":"4","8":"12","9":"16","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"9","9":"12","10":"e","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"manual(m6)","7":"4","8":"12","9":"16","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"manual(m6)","7":"4","8":"9","9":"12","10":"e","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"5.2","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"5.2","4":"1999","5":"8","6":"manual(m5)","7":"4","8":"11","9":"16","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"5.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"5.9","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"pickup"},{"1":"ford","2":"expedition 2wd","3":"4.6","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"11","9":"17","10":"r","11":"suv"},{"1":"ford","2":"expedition 2wd","3":"5.4","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"11","9":"17","10":"r","11":"suv"},{"1":"ford","2":"expedition 2wd","3":"5.4","4":"2008","5":"8","6":"auto(l6)","7":"r","8":"12","9":"18","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"4.0","4":"1999","5":"6","6":"auto(l5)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"4.0","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"15","9":"19","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"4.0","4":"1999","5":"6","6":"auto(l5)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"13","9":"19","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"4.6","4":"2008","5":"8","6":"auto(l6)","7":"4","8":"13","9":"19","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"5.0","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"suv"},{"1":"ford","2":"f150 pickup 4wd","3":"4.2","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"14","9":"17","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"4.2","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"14","9":"17","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"4.6","4":"1999","5":"8","6":"manual(m5)","7":"4","8":"13","9":"16","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"4.6","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"13","9":"16","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"4.6","4":"2008","5":"8","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"5.4","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"5.4","4":"2008","5":"8","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"ford","2":"mustang","3":"3.8","4":"1999","5":"6","6":"manual(m5)","7":"r","8":"18","9":"26","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"3.8","4":"1999","5":"6","6":"auto(l4)","7":"r","8":"18","9":"25","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.0","4":"2008","5":"6","6":"manual(m5)","7":"r","8":"17","9":"26","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"r","8":"16","9":"24","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.6","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"15","9":"21","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.6","4":"1999","5":"8","6":"manual(m5)","7":"r","8":"15","9":"22","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.6","4":"2008","5":"8","6":"manual(m5)","7":"r","8":"15","9":"23","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.6","4":"2008","5":"8","6":"auto(l5)","7":"r","8":"15","9":"22","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"5.4","4":"2008","5":"8","6":"manual(m6)","7":"r","8":"14","9":"20","10":"p","11":"subcompact"},{"1":"honda","2":"civic","3":"1.6","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"28","9":"33","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.6","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"24","9":"32","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.6","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"25","9":"32","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.6","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"23","9":"29","10":"p","11":"subcompact"},{"1":"honda","2":"civic","3":"1.6","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"24","9":"32","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.8","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"26","9":"34","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.8","4":"2008","5":"4","6":"auto(l5)","7":"f","8":"25","9":"36","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.8","4":"2008","5":"4","6":"auto(l5)","7":"f","8":"24","9":"36","10":"c","11":"subcompact"},{"1":"honda","2":"civic","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"21","9":"29","10":"p","11":"subcompact"},{"1":"hyundai","2":"sonata","3":"2.4","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"2.4","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"18","9":"27","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"2.4","4":"2008","5":"4","6":"auto(l4)","7":"f","8":"21","9":"30","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"2.4","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"21","9":"31","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"2.5","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"2.5","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"3.3","4":"2008","5":"6","6":"auto(l5)","7":"f","8":"19","9":"28","10":"r","11":"midsize"},{"1":"hyundai","2":"tiburon","3":"2.0","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"26","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.0","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"19","9":"29","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.0","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"20","9":"28","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.0","4":"2008","5":"4","6":"auto(l4)","7":"f","8":"20","9":"27","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.7","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"17","9":"24","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.7","4":"2008","5":"6","6":"manual(m6)","7":"f","8":"16","9":"24","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.7","4":"2008","5":"6","6":"manual(m5)","7":"f","8":"17","9":"24","10":"r","11":"subcompact"},{"1":"jeep","2":"grand cherokee 4wd","3":"3.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"17","9":"22","10":"d","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"3.7","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"15","9":"19","10":"r","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"4.0","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"15","9":"20","10":"r","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"4.7","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"9","9":"12","10":"e","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"14","9":"19","10":"r","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"5.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"18","10":"r","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"6.1","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"11","9":"14","10":"p","11":"suv"},{"1":"land rover","2":"range rover","3":"4.0","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"p","11":"suv"},{"1":"land rover","2":"range rover","3":"4.2","4":"2008","5":"8","6":"auto(s6)","7":"4","8":"12","9":"18","10":"r","11":"suv"},{"1":"land rover","2":"range rover","3":"4.4","4":"2008","5":"8","6":"auto(s6)","7":"4","8":"12","9":"18","10":"r","11":"suv"},{"1":"land rover","2":"range rover","3":"4.6","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"p","11":"suv"},{"1":"lincoln","2":"navigator 2wd","3":"5.4","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"11","9":"17","10":"r","11":"suv"},{"1":"lincoln","2":"navigator 2wd","3":"5.4","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"11","9":"16","10":"p","11":"suv"},{"1":"lincoln","2":"navigator 2wd","3":"5.4","4":"2008","5":"8","6":"auto(l6)","7":"r","8":"12","9":"18","10":"r","11":"suv"},{"1":"mercury","2":"mountaineer 4wd","3":"4.0","4":"1999","5":"6","6":"auto(l5)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"mercury","2":"mountaineer 4wd","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"13","9":"19","10":"r","11":"suv"},{"1":"mercury","2":"mountaineer 4wd","3":"4.6","4":"2008","5":"8","6":"auto(l6)","7":"4","8":"13","9":"19","10":"r","11":"suv"},{"1":"mercury","2":"mountaineer 4wd","3":"5.0","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"suv"},{"1":"nissan","2":"altima","3":"2.4","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"nissan","2":"altima","3":"2.4","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"27","10":"r","11":"compact"},{"1":"nissan","2":"altima","3":"2.5","4":"2008","5":"4","6":"auto(av)","7":"f","8":"23","9":"31","10":"r","11":"midsize"},{"1":"nissan","2":"altima","3":"2.5","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"23","9":"32","10":"r","11":"midsize"},{"1":"nissan","2":"altima","3":"3.5","4":"2008","5":"6","6":"manual(m6)","7":"f","8":"19","9":"27","10":"p","11":"midsize"},{"1":"nissan","2":"altima","3":"3.5","4":"2008","5":"6","6":"auto(av)","7":"f","8":"19","9":"26","10":"p","11":"midsize"},{"1":"nissan","2":"maxima","3":"3.0","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"nissan","2":"maxima","3":"3.0","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"19","9":"25","10":"r","11":"midsize"},{"1":"nissan","2":"maxima","3":"3.5","4":"2008","5":"6","6":"auto(av)","7":"f","8":"19","9":"25","10":"p","11":"midsize"},{"1":"nissan","2":"pathfinder 4wd","3":"3.3","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"nissan","2":"pathfinder 4wd","3":"3.3","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"15","9":"17","10":"r","11":"suv"},{"1":"nissan","2":"pathfinder 4wd","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"14","9":"20","10":"p","11":"suv"},{"1":"nissan","2":"pathfinder 4wd","3":"5.6","4":"2008","5":"8","6":"auto(s5)","7":"4","8":"12","9":"18","10":"p","11":"suv"},{"1":"pontiac","2":"grand prix","3":"3.1","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"pontiac","2":"grand prix","3":"3.8","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"16","9":"26","10":"p","11":"midsize"},{"1":"pontiac","2":"grand prix","3":"3.8","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"17","9":"27","10":"r","11":"midsize"},{"1":"pontiac","2":"grand prix","3":"3.8","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"18","9":"28","10":"r","11":"midsize"},{"1":"pontiac","2":"grand prix","3":"5.3","4":"2008","5":"8","6":"auto(s4)","7":"f","8":"16","9":"25","10":"p","11":"midsize"},{"1":"subaru","2":"forester awd","3":"2.5","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"18","9":"25","10":"r","11":"suv"},{"1":"subaru","2":"forester awd","3":"2.5","4":"1999","5":"4","6":"auto(l4)","7":"4","8":"18","9":"24","10":"r","11":"suv"},{"1":"subaru","2":"forester awd","3":"2.5","4":"2008","5":"4","6":"manual(m5)","7":"4","8":"20","9":"27","10":"r","11":"suv"},{"1":"subaru","2":"forester awd","3":"2.5","4":"2008","5":"4","6":"manual(m5)","7":"4","8":"19","9":"25","10":"p","11":"suv"},{"1":"subaru","2":"forester awd","3":"2.5","4":"2008","5":"4","6":"auto(l4)","7":"4","8":"20","9":"26","10":"r","11":"suv"},{"1":"subaru","2":"forester awd","3":"2.5","4":"2008","5":"4","6":"auto(l4)","7":"4","8":"18","9":"23","10":"p","11":"suv"},{"1":"subaru","2":"impreza awd","3":"2.2","4":"1999","5":"4","6":"auto(l4)","7":"4","8":"21","9":"26","10":"r","11":"subcompact"},{"1":"subaru","2":"impreza awd","3":"2.2","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"19","9":"26","10":"r","11":"subcompact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"19","9":"26","10":"r","11":"subcompact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"1999","5":"4","6":"auto(l4)","7":"4","8":"19","9":"26","10":"r","11":"subcompact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"2008","5":"4","6":"auto(s4)","7":"4","8":"20","9":"25","10":"p","11":"compact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"2008","5":"4","6":"auto(s4)","7":"4","8":"20","9":"27","10":"r","11":"compact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"2008","5":"4","6":"manual(m5)","7":"4","8":"19","9":"25","10":"p","11":"compact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"2008","5":"4","6":"manual(m5)","7":"4","8":"20","9":"27","10":"r","11":"compact"},{"1":"toyota","2":"4runner 4wd","3":"2.7","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"15","9":"20","10":"r","11":"suv"},{"1":"toyota","2":"4runner 4wd","3":"2.7","4":"1999","5":"4","6":"auto(l4)","7":"4","8":"16","9":"20","10":"r","11":"suv"},{"1":"toyota","2":"4runner 4wd","3":"3.4","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"15","9":"19","10":"r","11":"suv"},{"1":"toyota","2":"4runner 4wd","3":"3.4","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"15","9":"17","10":"r","11":"suv"},{"1":"toyota","2":"4runner 4wd","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"16","9":"20","10":"r","11":"suv"},{"1":"toyota","2":"4runner 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"toyota","2":"camry","3":"2.2","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"2.2","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"21","9":"27","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"2.4","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"21","9":"31","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"2.4","4":"2008","5":"4","6":"auto(l5)","7":"f","8":"21","9":"31","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"3.0","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"3.0","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"3.5","4":"2008","5":"6","6":"auto(s6)","7":"f","8":"19","9":"28","10":"r","11":"midsize"},{"1":"toyota","2":"camry solara","3":"2.2","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"21","9":"27","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"2.2","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"2.4","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"21","9":"31","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"2.4","4":"2008","5":"4","6":"auto(s5)","7":"f","8":"22","9":"31","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"3.0","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"3.0","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"18","9":"26","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"3.3","4":"2008","5":"6","6":"auto(s5)","7":"f","8":"18","9":"27","10":"r","11":"compact"},{"1":"toyota","2":"corolla","3":"1.8","4":"1999","5":"4","6":"auto(l3)","7":"f","8":"24","9":"30","10":"r","11":"compact"},{"1":"toyota","2":"corolla","3":"1.8","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"24","9":"33","10":"r","11":"compact"},{"1":"toyota","2":"corolla","3":"1.8","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"26","9":"35","10":"r","11":"compact"},{"1":"toyota","2":"corolla","3":"1.8","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"28","9":"37","10":"r","11":"compact"},{"1":"toyota","2":"corolla","3":"1.8","4":"2008","5":"4","6":"auto(l4)","7":"f","8":"26","9":"35","10":"r","11":"compact"},{"1":"toyota","2":"land cruiser wagon 4wd","3":"4.7","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"suv"},{"1":"toyota","2":"land cruiser wagon 4wd","3":"5.7","4":"2008","5":"8","6":"auto(s6)","7":"4","8":"13","9":"18","10":"r","11":"suv"},{"1":"toyota","2":"toyota tacoma 4wd","3":"2.7","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"15","9":"20","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"2.7","4":"1999","5":"4","6":"auto(l4)","7":"4","8":"16","9":"20","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"2.7","4":"2008","5":"4","6":"manual(m5)","7":"4","8":"17","9":"22","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"3.4","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"15","9":"17","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"3.4","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"15","9":"19","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"4.0","4":"2008","5":"6","6":"manual(m6)","7":"4","8":"15","9":"18","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"16","9":"20","10":"r","11":"pickup"},{"1":"volkswagen","2":"gti","3":"2.0","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"volkswagen","2":"gti","3":"2.0","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"26","10":"r","11":"compact"},{"1":"volkswagen","2":"gti","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"21","9":"29","10":"p","11":"compact"},{"1":"volkswagen","2":"gti","3":"2.0","4":"2008","5":"4","6":"auto(s6)","7":"f","8":"22","9":"29","10":"p","11":"compact"},{"1":"volkswagen","2":"gti","3":"2.8","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"17","9":"24","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"1.9","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"33","9":"44","10":"d","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.0","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.0","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"26","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.0","4":"2008","5":"4","6":"auto(s6)","7":"f","8":"22","9":"29","10":"p","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"21","9":"29","10":"p","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.5","4":"2008","5":"5","6":"auto(s6)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.5","4":"2008","5":"5","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.8","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"16","9":"23","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.8","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"17","9":"24","10":"r","11":"compact"},{"1":"volkswagen","2":"new beetle","3":"1.9","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"35","9":"44","10":"d","11":"subcompact"},{"1":"volkswagen","2":"new beetle","3":"1.9","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"29","9":"41","10":"d","11":"subcompact"},{"1":"volkswagen","2":"new beetle","3":"2.0","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"subcompact"},{"1":"volkswagen","2":"new beetle","3":"2.0","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"26","10":"r","11":"subcompact"},{"1":"volkswagen","2":"new beetle","3":"2.5","4":"2008","5":"5","6":"manual(m5)","7":"f","8":"20","9":"28","10":"r","11":"subcompact"},{"1":"volkswagen","2":"new beetle","3":"2.5","4":"2008","5":"5","6":"auto(s6)","7":"f","8":"20","9":"29","10":"r","11":"subcompact"},{"1":"volkswagen","2":"passat","3":"1.8","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"1.8","4":"1999","5":"4","6":"auto(l5)","7":"f","8":"18","9":"29","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"2.0","4":"2008","5":"4","6":"auto(s6)","7":"f","8":"19","9":"28","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"21","9":"29","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"2.8","4":"1999","5":"6","6":"auto(l5)","7":"f","8":"16","9":"26","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"2.8","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"18","9":"26","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"3.6","4":"2008","5":"6","6":"auto(s6)","7":"f","8":"17","9":"26","10":"p","11":"midsize"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nba_pbp_ny <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://tristancostello.github.io/nba_hoopr_ny.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(mpg) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n_missing)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">paged_table</span>(nba_pbp_ny) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(nba_pbp_ny) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n_missing)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>Data summary</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Name</td>
-<td style="text-align: left;">mpg</td>
+<td style="text-align: left;">nba_pbp_ny</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">234</td>
+<td style="text-align: left;">10698</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
-<td style="text-align: left;">11</td>
+<td style="text-align: left;">62</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">_______________________</td>
@@ -241,17 +237,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">character</td>
-<td style="text-align: left;">6</td>
+<td style="text-align: left;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">logical</td>
+<td style="text-align: left;">7</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">numeric</td>
-<td style="text-align: left;">5</td>
+<td style="text-align: left;">39</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">POSIXct</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">________________________</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Group variables</td>
 <td style="text-align: left;">None</td>
 </tr>
@@ -259,6 +267,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p><strong>Variable type: character</strong></p>
 <table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 20%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 13%">
+<col style="width: 15%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">skim_variable</th>
@@ -272,74 +289,223 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">type_text</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">34</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">101</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">model</td>
+<td style="text-align: left;">text</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4997</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">period_display_value</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">clock_display_value</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">809</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">home_team_name</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">home_team_mascot</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">home_team_abbrev</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">22</td>
+<td style="text-align: right;">4</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">38</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">home_team_name_alt</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">trans</td>
+<td style="text-align: left;">away_team_name</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">11</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">10</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">drv</td>
+<td style="text-align: left;">away_team_mascot</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">9</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
+<td style="text-align: right;">10</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">fl</td>
+<td style="text-align: left;">away_team_abbrev</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">5</td>
+<td style="text-align: right;">10</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class</td>
+<td style="text-align: left;">away_team_name_alt</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">10</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">time</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">6</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">809</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: Date</strong></p>
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: right;">n_unique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">game_date</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2023-10-25</td>
+<td style="text-align: left;">2023-12-13</td>
+<td style="text-align: left;">2023-11-17</td>
+<td style="text-align: right;">23</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: logical</strong></p>
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: left;">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">scoring_play</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: left;">FAL: 8061, TRU: 2637</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">shooting_play</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.47</td>
+<td style="text-align: left;">FAL: 5650, TRU: 5048</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">home_favorite</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">TRU: 10698</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">game_spread_available</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: left;">FAL: 10698</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">home_timeout_called</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: left;">FAL: 10698</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">away_timeout_called</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: left;">FAL: 10698</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">type_abbreviation</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">NaN</td>
+<td style="text-align: left;">:</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 10%">
-<col style="width: 6%">
+<col style="width: 21%">
+<col style="width: 9%">
+<col style="width: 9%">
 <col style="width: 8%">
 <col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 9%">
 <col style="width: 8%">
 <col style="width: 8%">
-<col style="width: 6%">
-<col style="width: 7%">
+<col style="width: 4%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -357,82 +523,596 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">displ</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3.47</td>
-<td style="text-align: right;">1.29</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">4.6</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">▇▆▆▃▁</td>
+<td style="text-align: left;">game_play_number</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.337600e+02</td>
+<td style="text-align: right;">1.354700e+02</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.170000e+02</td>
+<td style="text-align: right;">2.330000e+02</td>
+<td style="text-align: right;">3.490000e+02</td>
+<td style="text-align: right;">5.170000e+02</td>
+<td style="text-align: left;">▇▇▇▇▅</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">year</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2003.50</td>
-<td style="text-align: right;">4.51</td>
-<td style="text-align: right;">1999.0</td>
-<td style="text-align: right;">1999.0</td>
-<td style="text-align: right;">2003.5</td>
-<td style="text-align: right;">2008.0</td>
-<td style="text-align: right;">2008</td>
+<td style="text-align: left;">id</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">3.479674e+11</td>
+<td style="text-align: right;">1.288990e+11</td>
+<td style="text-align: right;">4015840904.0</td>
+<td style="text-align: right;">4.015841e+11</td>
+<td style="text-align: right;">4.015848e+11</td>
+<td style="text-align: right;">4.015849e+11</td>
+<td style="text-align: right;">4.016176e+11</td>
+<td style="text-align: left;">▂▁▁▁▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sequence_number</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">3.345200e+02</td>
+<td style="text-align: right;">1.931000e+02</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">1.670000e+02</td>
+<td style="text-align: right;">3.340000e+02</td>
+<td style="text-align: right;">4.990000e+02</td>
+<td style="text-align: right;">7.210000e+02</td>
+<td style="text-align: left;">▇▇▇▇▅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">type_id</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.683500e+02</td>
+<td style="text-align: right;">1.578100e+02</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">9.200000e+01</td>
+<td style="text-align: right;">1.250000e+02</td>
+<td style="text-align: right;">1.550000e+02</td>
+<td style="text-align: right;">6.150000e+02</td>
+<td style="text-align: left;">▇▆▁▁▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">away_score</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">5.642000e+01</td>
+<td style="text-align: right;">3.272000e+01</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">2.900000e+01</td>
+<td style="text-align: right;">5.600000e+01</td>
+<td style="text-align: right;">8.400000e+01</td>
+<td style="text-align: right;">1.300000e+02</td>
+<td style="text-align: left;">▇▇▇▇▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">home_score</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">5.824000e+01</td>
+<td style="text-align: right;">3.462000e+01</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">2.900000e+01</td>
+<td style="text-align: right;">5.700000e+01</td>
+<td style="text-align: right;">8.775000e+01</td>
+<td style="text-align: right;">1.460000e+02</td>
+<td style="text-align: left;">▇▇▇▆▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">period_number</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.540000e+00</td>
+<td style="text-align: right;">1.120000e+00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">3.000000e+00</td>
+<td style="text-align: right;">4.000000e+00</td>
+<td style="text-align: right;">4.000000e+00</td>
+<td style="text-align: left;">▇▇▁▇▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">score_value</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">4.800000e-01</td>
+<td style="text-align: right;">9.100000e-01</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.000000e+00</td>
+<td style="text-align: right;">0.000000e+00</td>
+<td style="text-align: right;">0.000000e+00</td>
+<td style="text-align: right;">3.000000e+00</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">team_id</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">1.659000e+01</td>
+<td style="text-align: right;">7.730000e+00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.500000e+01</td>
+<td style="text-align: right;">1.800000e+01</td>
+<td style="text-align: right;">1.800000e+01</td>
+<td style="text-align: right;">3.000000e+01</td>
+<td style="text-align: left;">▂▁▇▁▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">athlete_id_1</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">3.619452e+06</td>
+<td style="text-align: right;">1.172100e+06</td>
+<td style="text-align: right;">3012.0</td>
+<td style="text-align: right;">3.064514e+06</td>
+<td style="text-align: right;">3.934673e+06</td>
+<td style="text-align: right;">4.395625e+06</td>
+<td style="text-align: right;">5.106258e+06</td>
+<td style="text-align: left;">▂▁▃▆▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">athlete_id_2</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: right;">3.567903e+06</td>
+<td style="text-align: right;">1.243843e+06</td>
+<td style="text-align: right;">3012.0</td>
+<td style="text-align: right;">3.064514e+06</td>
+<td style="text-align: right;">3.934673e+06</td>
+<td style="text-align: right;">4.395625e+06</td>
+<td style="text-align: right;">5.106258e+06</td>
+<td style="text-align: left;">▂▁▃▅▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">athlete_id_3</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">3.376022e+06</td>
+<td style="text-align: right;">1.130273e+06</td>
+<td style="text-align: right;">3012.0</td>
+<td style="text-align: right;">3.064514e+06</td>
+<td style="text-align: right;">3.934672e+06</td>
+<td style="text-align: right;">3.934672e+06</td>
+<td style="text-align: right;">4.701230e+06</td>
+<td style="text-align: left;">▁▁▁▅▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">coordinate_x_raw</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-3.938456e+07</td>
+<td style="text-align: right;">8.311002e+07</td>
+<td style="text-align: right;">-214748340.0</td>
+<td style="text-align: right;">8.000000e+00</td>
+<td style="text-align: right;">2.500000e+01</td>
+<td style="text-align: right;">2.700000e+01</td>
+<td style="text-align: right;">4.900000e+01</td>
+<td style="text-align: left;">▂▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">coordinate_y_raw</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-3.938458e+07</td>
+<td style="text-align: right;">8.311002e+07</td>
+<td style="text-align: right;">-214748365.0</td>
+<td style="text-align: right;">0.000000e+00</td>
+<td style="text-align: right;">5.000000e+00</td>
+<td style="text-align: right;">1.375000e+01</td>
+<td style="text-align: right;">5.000000e+01</td>
+<td style="text-align: left;">▂▁▁▁▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">game_id</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">4.015871e+08</td>
+<td style="text-align: right;">7.969160e+03</td>
+<td style="text-align: right;">401584090.0</td>
+<td style="text-align: right;">4.015847e+08</td>
+<td style="text-align: right;">4.015848e+08</td>
+<td style="text-align: right;">4.015849e+08</td>
+<td style="text-align: right;">4.016176e+08</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">season</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.024000e+03</td>
+<td style="text-align: right;">0.000000e+00</td>
+<td style="text-align: right;">2024.0</td>
+<td style="text-align: right;">2.024000e+03</td>
+<td style="text-align: right;">2.024000e+03</td>
+<td style="text-align: right;">2.024000e+03</td>
+<td style="text-align: right;">2.024000e+03</td>
+<td style="text-align: left;">▁▁▇▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">season_type</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">0.000000e+00</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: left;">▁▁▇▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">home_team_id</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.530000e+01</td>
+<td style="text-align: right;">8.580000e+00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">5.000000e+00</td>
+<td style="text-align: right;">1.800000e+01</td>
+<td style="text-align: right;">1.800000e+01</td>
+<td style="text-align: right;">3.000000e+01</td>
+<td style="text-align: left;">▃▁▇▁▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">away_team_id</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.770000e+01</td>
+<td style="text-align: right;">6.670000e+00</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">1.800000e+01</td>
+<td style="text-align: right;">1.800000e+01</td>
+<td style="text-align: right;">1.800000e+01</td>
+<td style="text-align: right;">3.000000e+01</td>
+<td style="text-align: left;">▁▁▇▁▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">game_spread</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.500000e+00</td>
+<td style="text-align: right;">0.000000e+00</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">2.500000e+00</td>
+<td style="text-align: right;">2.500000e+00</td>
+<td style="text-align: right;">2.500000e+00</td>
+<td style="text-align: right;">2.500000e+00</td>
+<td style="text-align: left;">▁▁▇▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">home_team_spread</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.500000e+00</td>
+<td style="text-align: right;">0.000000e+00</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">2.500000e+00</td>
+<td style="text-align: right;">2.500000e+00</td>
+<td style="text-align: right;">2.500000e+00</td>
+<td style="text-align: right;">2.500000e+00</td>
+<td style="text-align: left;">▁▁▇▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">qtr</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.540000e+00</td>
+<td style="text-align: right;">1.120000e+00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">3.000000e+00</td>
+<td style="text-align: right;">4.000000e+00</td>
+<td style="text-align: right;">4.000000e+00</td>
+<td style="text-align: left;">▇▇▁▇▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">clock_minutes</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">5.130000e+00</td>
+<td style="text-align: right;">3.500000e+00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">5.000000e+00</td>
+<td style="text-align: right;">8.000000e+00</td>
+<td style="text-align: right;">1.200000e+01</td>
+<td style="text-align: left;">▇▅▇▅▃</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">clock_seconds</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.820000e+01</td>
+<td style="text-align: right;">1.782000e+01</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">1.300000e+01</td>
+<td style="text-align: right;">2.800000e+01</td>
+<td style="text-align: right;">4.300000e+01</td>
+<td style="text-align: right;">5.920000e+01</td>
+<td style="text-align: left;">▇▆▆▇▆</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">half</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.510000e+00</td>
+<td style="text-align: right;">5.000000e-01</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: left;">▇▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">game_half</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.510000e+00</td>
+<td style="text-align: right;">5.000000e-01</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
 <td style="text-align: left;">▇▁▁▁▇</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">cyl</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5.89</td>
-<td style="text-align: right;">1.61</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">8.0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">▇▁▇▁▇</td>
+<td style="text-align: left;">lead_qtr</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.550000e+00</td>
+<td style="text-align: right;">1.120000e+00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">3.000000e+00</td>
+<td style="text-align: right;">4.000000e+00</td>
+<td style="text-align: right;">4.000000e+00</td>
+<td style="text-align: left;">▇▇▁▇▇</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">cty</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">16.86</td>
-<td style="text-align: right;">4.26</td>
-<td style="text-align: right;">9.0</td>
-<td style="text-align: right;">14.0</td>
-<td style="text-align: right;">17.0</td>
-<td style="text-align: right;">19.0</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: left;">▆▇▃▁▁</td>
+<td style="text-align: left;">lead_half</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.510000e+00</td>
+<td style="text-align: right;">5.000000e-01</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: left;">▇▁▁▁▇</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">hwy</td>
+<td style="text-align: left;">start_quarter_seconds_remaining</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">3.361900e+02</td>
+<td style="text-align: right;">2.102500e+02</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">1.550000e+02</td>
+<td style="text-align: right;">3.290000e+02</td>
+<td style="text-align: right;">5.120000e+02</td>
+<td style="text-align: right;">7.200000e+02</td>
+<td style="text-align: left;">▇▇▇▆▆</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">start_half_seconds_remaining</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">6.838800e+02</td>
+<td style="text-align: right;">4.144200e+02</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">3.280000e+02</td>
+<td style="text-align: right;">6.970000e+02</td>
+<td style="text-align: right;">1.027000e+03</td>
+<td style="text-align: right;">1.440000e+03</td>
+<td style="text-align: left;">▇▇▇▇▆</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">start_game_seconds_remaining</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.385570e+03</td>
+<td style="text-align: right;">8.324000e+02</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">6.710000e+02</td>
+<td style="text-align: right;">1.401500e+03</td>
+<td style="text-align: right;">2.116000e+03</td>
+<td style="text-align: right;">2.880000e+03</td>
+<td style="text-align: left;">▇▇▇▇▆</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">end_quarter_seconds_remaining</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">3.354300e+02</td>
+<td style="text-align: right;">2.098400e+02</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">1.550000e+02</td>
+<td style="text-align: right;">3.280000e+02</td>
+<td style="text-align: right;">5.110000e+02</td>
+<td style="text-align: right;">7.200000e+02</td>
+<td style="text-align: left;">▇▇▇▆▆</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">end_half_seconds_remaining</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">6.823100e+02</td>
+<td style="text-align: right;">4.134700e+02</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">3.270000e+02</td>
+<td style="text-align: right;">6.930000e+02</td>
+<td style="text-align: right;">1.024000e+03</td>
+<td style="text-align: right;">1.440000e+03</td>
+<td style="text-align: left;">▇▇▇▇▆</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">end_game_seconds_remaining</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.382420e+03</td>
+<td style="text-align: right;">8.304700e+02</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">6.695000e+02</td>
+<td style="text-align: right;">1.397000e+03</td>
+<td style="text-align: right;">2.110000e+03</td>
+<td style="text-align: right;">2.880000e+03</td>
+<td style="text-align: left;">▇▇▇▇▆</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">period</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.540000e+00</td>
+<td style="text-align: right;">1.120000e+00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">3.000000e+00</td>
+<td style="text-align: right;">4.000000e+00</td>
+<td style="text-align: right;">4.000000e+00</td>
+<td style="text-align: left;">▇▇▁▇▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lag_qtr</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.540000e+00</td>
+<td style="text-align: right;">1.120000e+00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">3.000000e+00</td>
+<td style="text-align: right;">4.000000e+00</td>
+<td style="text-align: right;">4.000000e+00</td>
+<td style="text-align: left;">▇▇▁▇▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lag_half</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.510000e+00</td>
+<td style="text-align: right;">5.000000e-01</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: right;">2.000000e+00</td>
+<td style="text-align: left;">▇▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">coordinate_x</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-3.091350e+06</td>
+<td style="text-align: right;">9.191851e+07</td>
+<td style="text-align: right;">-214748406.8</td>
+<td style="text-align: right;">-3.775000e+01</td>
+<td style="text-align: right;">-1.475000e+01</td>
+<td style="text-align: right;">3.675000e+01</td>
+<td style="text-align: right;">2.147484e+08</td>
+<td style="text-align: left;">▁▁▇▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">coordinate_y</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-3.091349e+06</td>
+<td style="text-align: right;">9.191849e+07</td>
+<td style="text-align: right;">-214748365.0</td>
+<td style="text-align: right;">-8.000000e+00</td>
+<td style="text-align: right;">0.000000e+00</td>
+<td style="text-align: right;">7.000000e+00</td>
+<td style="text-align: right;">2.147484e+08</td>
+<td style="text-align: left;">▁▁▇▁▁</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: POSIXct</strong></p>
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: right;">n_unique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">wallclock</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">23.44</td>
-<td style="text-align: right;">5.95</td>
-<td style="text-align: right;">12.0</td>
-<td style="text-align: right;">18.0</td>
-<td style="text-align: right;">24.0</td>
-<td style="text-align: right;">27.0</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: left;">▅▅▇▁▁</td>
+<td style="text-align: left;">2023-10-25 23:14:00</td>
+<td style="text-align: left;">2023-12-14 04:39:36</td>
+<td style="text-align: left;">2023-11-18 01:26:48</td>
+<td style="text-align: right;">9407</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">game_date_time</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2023-10-25 23:00:00</td>
+<td style="text-align: left;">2023-12-14 02:00:00</td>
+<td style="text-align: left;">2023-11-18 00:00:00</td>
+<td style="text-align: right;">23</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="mpg-and-a-type-of-cars" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="mpg-and-a-type-of-cars"><span class="header-section-number">2.2</span> MPG and a Type of Cars</h2>
-<p>The following boxplot shows how the distribution of highway MPG (<code>hwy</code>) varies by a type of cars (<code>class</code>) <span class="emoji" data-emoji="blue_car">🚙</span> <span class="emoji" data-emoji="truck">🚚</span> <span class="emoji" data-emoji="minibus">🚐</span>.</p>
+<section id="home-score-and-team" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="home-score-and-team"><span class="header-section-number">2.2</span> Home Score and Team</h2>
+<p>The following boxplot shows the home score (<code>home_score</code>) of the home team (<code>home_team_name</code>) :basketball</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy, <span class="at">fill =</span> class),</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">show.legend =</span> F) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Class"</span>, <span class="at">y =</span> <span class="st">"Highway</span><span class="sc">\n</span><span class="st">MPG"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>         nba_pbp_ny <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">filter</span>(home_team_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Utah"</span>, <span class="st">"New York"</span>,<span class="st">"Boston"</span>))) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> home_team_name, <span class="at">y =</span> home_score, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fill =</span> home_team_name),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</section>
+<section id="away-score-and-team" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="away-score-and-team"><span class="header-section-number">2.3</span> Away Score and Team</h2>
+<p>The following boxplot shows the away score (<code>away_score</code>) of the away team (<code>away_team_name</code>) :basketball</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>         nba_pbp_ny <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">filter</span>(away_team_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Utah"</span>, <span class="st">"New York"</span>,<span class="st">"Boston"</span>))) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> away_team_name, <span class="at">y =</span> away_score, </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fill =</span> away_team_name),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="project_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
+</section>
+<section id="home-score-and-team-1" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="home-score-and-team-1"><span class="header-section-number">2.4</span> Home Score and Team</h2>
+<p>The following line graph shows the home score (<code>home_score</code>) of the home team (<code>home_team_name</code>) :basketball</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nba_pbp_ny <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(home_team_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Utah"</span>, <span class="st">"New York"</span>, <span class="st">"Boston"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(home_team_name), <span class="at">y =</span> home_score, <span class="at">group =</span> home_team_name, <span class="at">color =</span> home_team_name)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Home Team Scores Over Time"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Home Team Name"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Home Team Score"</span>) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</section>
+<section id="away-score-and-team-1" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="away-score-and-team-1"><span class="header-section-number">2.5</span> Away Score and Team</h2>
+<p>The following line graph shows the away score (<code>away_score</code>) of the away team (<code>away_team_name</code>) :basketball</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nba_pbp_ny <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(away_team_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Utah"</span>,<span class="st">"New York"</span>, <span class="st">"Boston"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(away_team_name), <span class="at">y =</span> away_score, <span class="at">group =</span> away_team_name, <span class="at">color =</span> away_team_name)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Away Team Scores Over Time"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Away Team Name"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Away Team Score"</span>) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</section>
+<section id="why-do-teams-tend-to-do-better-at-home" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="why-do-teams-tend-to-do-better-at-home"><span class="header-section-number">2.6</span> Why do teams tend to do better at home?</h2>
+<p>Home court advantage serves as a decisive factor across all professional sports, providing teams with a significant edge through a positive atmosphere and heightened motivation fueled by fan support. The familiar surroundings and enthusiastic cheers contribute to a sense of camaraderie, inspiring players to deliver standout performances on their home court. This intricate interplay between psychological factors and tangible gameplay dynamics underscores the enduring impact of home court advantage in shaping the outcomes of competitive matches.</p>
+</section>
+<section id="why-do-teams-score-more-against-other-teams" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="why-do-teams-score-more-against-other-teams"><span class="header-section-number">2.7</span> Why do teams score more against other teams?</h2>
+<p>Teams may score more against certain opponents due to a variety of factors. These could include differences in team strategies, strengths and weaknesses, player matchups, and tactical variations that exploit vulnerabilities in the opposing team’s defense. Additionally, factors such as team morale, motivation, and the specific dynamics of each match can influence scoring outcomes, creating variations in performance against different opponents. Understanding the specific elements at play, both strategically and psychologically, contributes to unraveling the complexities behind why teams may exhibit higher-scoring performances against certain adversaries.</p>
+</section>
+<section id="are-there-specific-players-associated-with-higher-scoring-games" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="are-there-specific-players-associated-with-higher-scoring-games"><span class="header-section-number">2.8</span> Are there specific players associated with higher scoring games?</h2>
+<p>Yes, specific basketball players are often associated with higher-scoring games, and their individual performances can significantly impact the overall scoring of their teams. Star players known for their scoring abilities, such as prolific scorers or sharpshooters, tend to contribute more points to their team’s total. Factors such as a player’s skill set, shooting accuracy, scoring versatility, and ability to create scoring opportunities can all influence their association with higher-scoring games. Analyzing individual player performances provides insights into the key contributors to a team’s overall scoring and helps identify players who consistently excel in putting points on</p>
+</section>
+<section id="can-we-identify-any-variables-that-correlate-strongly-with-team-performance" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="can-we-identify-any-variables-that-correlate-strongly-with-team-performance"><span class="header-section-number">2.9</span> Can we identify any variables that correlate strongly with team performance?</h2>
+<p>Exploring the correlation between various variables and team performance is crucial for gaining insights into the factors that contribute to a team’s success. Key variables to consider include player statistics (e.g., points per game, assists, rebounds), team dynamics, coaching strategies, and game-related metrics (e.g., field goal percentage, three-point percentage, turnovers). By conducting a comprehensive analysis, we can identify which of these factors exhibit a strong correlation with team performance, providing valuable information for coaches, analysts, and teams seeking to optimize their strategies and enhance overall on-court success.</p>
 
 
 </section>

@@ -1,9 +1,9 @@
 ---
-title: "Post With Code"
-author: "YOUR NAME"
+title: "Beer"
+author: "Tristan Costello"
 date: "2023-10-30"
-categories: [news, code, analysis]
-image: "image.jpg"
+categories: [beer]
+image: "beer.png"
 ---
 
 This is a post with executable code.
